@@ -18,21 +18,31 @@ export default function Contact() {
               <Mail size={18} className="mt-0.5 shrink-0 text-brand-red" aria-hidden="true" />
               <div>
                 <p className="text-sm font-bold text-brand-dark">{c.email}</p>
-                <p className="text-sm text-brand-dark/60">{c.emailValue}</p>
+                <p className="text-sm text-brand-dark/60">
+                  <a href={`mailto:${c.emailValue}`} className="hover:text-brand-dark">
+                    {c.emailValue}
+                  </a>
+                </p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <Phone size={18} className="mt-0.5 shrink-0 text-brand-red" aria-hidden="true" />
               <div>
                 <p className="text-sm font-bold text-brand-dark">{c.phone}</p>
-                <p className="text-sm text-brand-dark/60">{c.phoneValue}</p>
+                {c.phoneValues.map((number) => (
+                  <p key={number} className="text-sm text-brand-dark/60">
+                    <a href={`tel:${number.replace(/\s+/g, '')}`} className="hover:text-brand-dark">
+                      {number}
+                    </a>
+                  </p>
+                ))}
               </div>
             </div>
             <div className="flex items-start gap-3">
               <MapPin size={18} className="mt-0.5 shrink-0 text-brand-red" aria-hidden="true" />
               <div>
-                <p className="text-sm font-bold text-brand-dark">{c.base}</p>
-                <p className="text-sm text-brand-dark/60">{c.baseValue}</p>
+                <p className="text-sm font-bold text-brand-dark">{c.address}</p>
+                <p className="text-sm text-brand-dark/60">{c.addressValue}</p>
               </div>
             </div>
           </Reveal>

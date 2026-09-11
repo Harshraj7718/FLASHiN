@@ -28,11 +28,11 @@ export default function Home() {
       <BrandTypewriter />
       <WhatIsFlashit />
       <Problem />
-      <CustomerSection />
+      <CustomerSection compact />
       <CustomerJourney />
-      <SupplierSection />
+      <SupplierSection compact />
       <SupplierWorkflow />
-      <ProfessionalSection />
+      <ProfessionalSection compact />
       <ReferralFlow />
       <BulkOrderSection />
       <EcosystemSection />

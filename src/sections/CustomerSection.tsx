@@ -7,15 +7,20 @@ import { getCustomerBenefits } from '@/data/benefits'
 import { getProductCategories } from '@/data/categories'
 import { useLanguage } from '@/i18n'
 
-export default function CustomerSection() {
+interface CustomerSectionProps {
+  compact?: boolean
+}
+
+export default function CustomerSection({ compact = false }: CustomerSectionProps) {
   const { t } = useLanguage()
   const customerBenefits = getCustomerBenefits(t)
   const productCategories = getProductCategories(t)
+  const benefits = compact ? customerBenefits.slice(0, 4) : customerBenefits
 
   return (
-    <section id="customers" className="py-20 sm:py-24 lg:py-32">
+    <section id="customers" className={compact ? 'py-14 sm:py-16 lg:py-20' : 'py-20 sm:py-24 lg:py-32'}>
       <div className="container-flash">
-        <div className="mb-12 flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+        <div className={`flex flex-col justify-between gap-8 lg:flex-row lg:items-end ${compact ? 'mb-10' : 'mb-12'}`}>
           <SectionHeader eyebrow={t.customer.eyebrow} title={t.customer.title} subtitle={t.customer.subtitle} />
           <div className="flex flex-wrap gap-3">
             <Button to="/customer" icon>
@@ -27,17 +32,19 @@ export default function CustomerSection() {
           </div>
         </div>
 
-        <Reveal className="mb-14 overflow-hidden rounded-card">
-          <img
-            src="/images/customers.png"
-            alt="Everything you need to build, repair and maintain — delivered from local suppliers through FLASHiT"
-            loading="lazy"
-            className="w-full object-cover"
-          />
-        </Reveal>
+        {!compact && (
+          <Reveal className="mb-14 overflow-hidden rounded-card">
+            <img
+              src="/images/customers.png"
+              alt="Everything you need to build, repair and maintain — delivered from local suppliers through FLASHiT"
+              loading="lazy"
+              className="w-full object-cover"
+            />
+          </Reveal>
+        )}
 
         <RevealStagger
-          className="mb-14 flex flex-wrap gap-3"
+          className={`flex flex-wrap gap-3 ${compact ? 'mb-8' : 'mb-14'}`}
           itemSelector=":scope > .cat-chip"
           stagger={0.05}
         >
@@ -53,7 +60,7 @@ export default function CustomerSection() {
         </RevealStagger>
 
         <RevealStagger className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4" itemSelector=":scope > *" stagger={0.06}>
-          {customerBenefits.map((b) => (
+          {benefits.map((b) => (
             <FeatureCard key={b.title} {...b} />
           ))}
         </RevealStagger>

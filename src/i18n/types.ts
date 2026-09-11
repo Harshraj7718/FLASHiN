@@ -332,9 +332,9 @@ export interface Translations {
       email: string
       emailValue: string
       phone: string
-      phoneValue: string
-      base: string
-      baseValue: string
+      phoneValues: [string, string]
+      address: string
+      addressValue: string
     }
     join: {
       eyebrow: string

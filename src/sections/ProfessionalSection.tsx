@@ -6,44 +6,53 @@ import Button from '@/components/Button'
 import { getProfessionalBenefits } from '@/data/benefits'
 import { useLanguage } from '@/i18n'
 
-export default function ProfessionalSection() {
+interface ProfessionalSectionProps {
+  compact?: boolean
+}
+
+export default function ProfessionalSection({ compact = false }: ProfessionalSectionProps) {
   const { t } = useLanguage()
   const professionalBenefits = getProfessionalBenefits(t)
+  const benefits = compact ? professionalBenefits.slice(0, 4) : professionalBenefits
 
   return (
-    <section id="professionals" className="py-20 sm:py-24 lg:py-32">
+    <section id="professionals" className={compact ? 'py-14 sm:py-16 lg:py-20' : 'py-20 sm:py-24 lg:py-32'}>
       <div className="container-flash">
-        <div className="mb-10 flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+        <div className={`flex flex-col justify-between gap-8 lg:flex-row lg:items-end ${compact ? 'mb-8' : 'mb-10'}`}>
           <SectionHeader eyebrow={t.professional.eyebrow} title={t.professional.title} subtitle={t.professional.subtitle} />
           <Button to="/professionals" icon>
             {t.common.joinAsProfessional}
           </Button>
         </div>
 
-        <RevealStagger className="mb-10 flex flex-wrap gap-2.5" itemSelector=":scope > *" stagger={0.04}>
-          {t.professional.roles.map((r) => (
-            <span key={r} className="rounded-full border border-black/[0.08] bg-white px-4 py-2 text-sm font-semibold text-brand-dark">
-              {r}
-            </span>
-          ))}
-        </RevealStagger>
+        {!compact && (
+          <>
+            <RevealStagger className="mb-10 flex flex-wrap gap-2.5" itemSelector=":scope > *" stagger={0.04}>
+              {t.professional.roles.map((r) => (
+                <span key={r} className="rounded-full border border-black/[0.08] bg-white px-4 py-2 text-sm font-semibold text-brand-dark">
+                  {r}
+                </span>
+              ))}
+            </RevealStagger>
 
-        <Reveal className="mb-12 flex justify-center">
-          <img
-            src="/images/professionals.png"
-            alt="Your customers. Your referral. Your rewards. — the FLASHiT Pro referral app"
-            loading="lazy"
-            className="w-full max-w-4xl"
-          />
-        </Reveal>
+            <Reveal className="mb-12 flex justify-center">
+              <img
+                src="/images/professionals.png"
+                alt="Your customers. Your referral. Your rewards. — the FLASHiT Pro referral app"
+                loading="lazy"
+                className="w-full max-w-4xl"
+              />
+            </Reveal>
+          </>
+        )}
 
-        <Reveal className="mb-12 rounded-card border border-brand-red/20 bg-brand-red/5 p-6 sm:p-8">
+        <Reveal className={`rounded-card border border-brand-red/20 bg-brand-red/5 p-6 sm:p-8 ${compact ? 'mb-8' : 'mb-12'}`}>
           <p className="text-base font-semibold text-brand-dark sm:text-lg">{t.professional.badge}</p>
         </Reveal>
 
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
           <RevealStagger className="grid grid-cols-1 gap-3 sm:grid-cols-2" itemSelector=":scope > *" stagger={0.04}>
-            {professionalBenefits.map((b) => (
+            {benefits.map((b) => (
               <div key={b} className="flex items-start gap-2.5 rounded-btn border border-black/[0.06] bg-white p-4">
                 <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-red" />
                 <span className="text-sm leading-relaxed text-brand-dark/75">{b}</span>
