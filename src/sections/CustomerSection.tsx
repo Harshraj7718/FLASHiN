@@ -1,7 +1,7 @@
 import SectionHeader from '@/components/SectionHeader'
 import FeatureCard from '@/components/FeatureCard'
 import RevealStagger from '@/components/RevealStagger'
-import Reveal from '@/components/Reveal'
+import RevealImage from '@/components/RevealImage'
 import Button from '@/components/Button'
 import { getCustomerBenefits } from '@/data/benefits'
 import { getProductCategories } from '@/data/categories'
@@ -33,14 +33,14 @@ export default function CustomerSection({ compact = false }: CustomerSectionProp
         </div>
 
         {!compact && (
-          <Reveal className="mb-14 overflow-hidden rounded-card">
+          <RevealImage variant="slide-left" className="mb-14 overflow-hidden rounded-card">
             <img
               src="/images/customers.png"
               alt="Everything you need to build, repair and maintain — delivered from local suppliers through FLASHiT"
               loading="lazy"
               className="w-full object-cover"
             />
-          </Reveal>
+          </RevealImage>
         )}
 
         <RevealStagger

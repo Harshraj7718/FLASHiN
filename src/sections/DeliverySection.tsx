@@ -1,6 +1,6 @@
 import { Zap, Clock, Truck } from 'lucide-react'
 import SectionHeader from '@/components/SectionHeader'
-import Reveal from '@/components/Reveal'
+import RevealImage from '@/components/RevealImage'
 import RevealStagger from '@/components/RevealStagger'
 import { useLanguage } from '@/i18n'
 
@@ -19,14 +19,14 @@ export default function DeliverySection() {
           className="mb-14"
         />
 
-        <Reveal className="mb-14 overflow-hidden rounded-card border border-black/[0.06]">
+        <RevealImage variant="fade-up" className="mb-14 overflow-hidden rounded-card border border-black/[0.06]">
           <img
             src="/images/delivery.png"
             alt="FLASHiT delivery models — express, same-day and scheduled bulk delivery"
             loading="lazy"
             className="w-full object-cover"
           />
-        </Reveal>
+        </RevealImage>
 
         <RevealStagger className="grid grid-cols-1 gap-5 sm:grid-cols-3" itemSelector=":scope > *" stagger={0.08}>
           {t.delivery.models.map(({ title, description, examples }, i) => {

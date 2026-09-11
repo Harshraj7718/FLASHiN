@@ -62,20 +62,6 @@ export const en: Translations = {
     sub: 'One platform connecting you with trusted local businesses, products and delivery.',
     micro1: 'Starting with construction. Building toward everything.',
     micro2: 'From local stores to your doorstep.',
-    visual: {
-      requirementLabel: 'Requirement',
-      requirementText: 'Need 200 bags Cement',
-      requirementSubtext: 'Submitted by a customer',
-      finding: 'Finding local suppliers...',
-      nearbyHeading: '3 suppliers found nearby',
-      nearbySubtext: 'Ready to fulfil your order',
-      bestSelected: 'Best available option selected',
-      bestSelectedSub: 'Supplier B — ₹70,500',
-      deliveryScheduled: 'Delivery Scheduled',
-      deliveryScheduledSub: 'Order confirmed and on its way',
-      supplierNames: ['Supplier A', 'Supplier B', 'Supplier C'],
-      distances: ['0.8 km away', '1.4 km away', '2.1 km away'],
-    },
   },
 
   whatIs: {

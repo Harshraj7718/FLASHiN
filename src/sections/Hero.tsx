@@ -1,6 +1,5 @@
 import { useLayoutEffect, useRef } from 'react'
 import Button from '@/components/Button'
-import HeroVisual from '@/components/HeroVisual'
 import HeroOrbit from '@/components/HeroOrbit'
 import { gsap } from '@/lib/gsap'
 import { useLanguage } from '@/i18n'
@@ -59,7 +58,11 @@ export default function Hero() {
         </div>
 
         <div className="hero-visual">
-          <HeroVisual />
+          <img
+            src="/images/hero.png"
+            alt="The FLASHiT ecosystem — customers, local suppliers, professionals and delivery riders connected through one platform"
+            className="mx-auto w-full max-w-[560px]"
+          />
         </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 import SectionHeader from '@/components/SectionHeader'
 import Stepper from '@/components/Stepper'
-import Reveal from '@/components/Reveal'
+import RevealImage from '@/components/RevealImage'
 import RevealStagger from '@/components/RevealStagger'
 import { useLanguage } from '@/i18n'
 
@@ -12,14 +12,14 @@ export default function Problem() {
       <div className="container-flash">
         <SectionHeader align="center" eyebrow={t.problem.eyebrow} title={t.problem.title} className="mb-14" />
 
-        <Reveal className="mb-16 flex justify-center">
+        <RevealImage variant="zoom-in" className="mb-16 flex justify-center">
           <img
             src="/images/problem.png"
             alt="The old way of sourcing construction materials — too many calls, stores and steps"
             loading="lazy"
             className="w-full max-w-4xl"
           />
-        </Reveal>
+        </RevealImage>
 
         <RevealStagger className="mb-16 grid grid-cols-1 gap-5 sm:grid-cols-3" itemSelector=":scope > .pain-card" stagger={0.1}>
           {t.problem.groups.map((group) => (

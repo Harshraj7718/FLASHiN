@@ -1,6 +1,7 @@
 import { QrCode, Share2, Wallet } from 'lucide-react'
 import SectionHeader from '@/components/SectionHeader'
 import Reveal from '@/components/Reveal'
+import RevealImage from '@/components/RevealImage'
 import RevealStagger from '@/components/RevealStagger'
 import Button from '@/components/Button'
 import { getProfessionalBenefits } from '@/data/benefits'
@@ -35,14 +36,14 @@ export default function ProfessionalSection({ compact = false }: ProfessionalSec
               ))}
             </RevealStagger>
 
-            <Reveal className="mb-12 flex justify-center">
+            <RevealImage variant="wipe" className="mb-12 flex justify-center">
               <img
                 src="/images/professionals.png"
                 alt="Your customers. Your referral. Your rewards. — the FLASHiT Pro referral app"
                 loading="lazy"
                 className="w-full max-w-4xl"
               />
-            </Reveal>
+            </RevealImage>
           </>
         )}
 

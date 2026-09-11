@@ -62,20 +62,6 @@ export const hi: Translations = {
     sub: 'एक ऐसा प्लेटफ़ॉर्म जो आपको भरोसेमंद लोकल बिज़नेस, प्रोडक्ट्स और डिलीवरी से जोड़ता है।',
     micro1: 'निर्माण से शुरुआत। हर ज़रूरत की ओर आगे बढ़ते हुए।',
     micro2: 'लोकल दुकानों से सीधे आपके दरवाज़े तक।',
-    visual: {
-      requirementLabel: 'ज़रूरत',
-      requirementText: '200 बैग सीमेंट चाहिए',
-      requirementSubtext: 'एक ग्राहक द्वारा सबमिट किया गया',
-      finding: 'नज़दीकी सप्लायर खोजे जा रहे हैं...',
-      nearbyHeading: 'आसपास 3 सप्लायर मिले',
-      nearbySubtext: 'आपका ऑर्डर पूरा करने के लिए तैयार',
-      bestSelected: 'सबसे बेहतर विकल्प चुना गया',
-      bestSelectedSub: 'सप्लायर B — ₹70,500',
-      deliveryScheduled: 'डिलीवरी शेड्यूल हो गई',
-      deliveryScheduledSub: 'ऑर्डर कन्फर्म हो गया है और रास्ते में है',
-      supplierNames: ['सप्लायर A', 'सप्लायर B', 'सप्लायर C'],
-      distances: ['0.8 km दूर', '1.4 km दूर', '2.1 km दूर'],
-    },
   },
 
   whatIs: {

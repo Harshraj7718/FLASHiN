@@ -63,20 +63,6 @@ export interface Translations {
     sub: string
     micro1: string
     micro2: string
-    visual: {
-      requirementLabel: string
-      requirementText: string
-      requirementSubtext: string
-      finding: string
-      nearbyHeading: string
-      nearbySubtext: string
-      bestSelected: string
-      bestSelectedSub: string
-      deliveryScheduled: string
-      deliveryScheduledSub: string
-      supplierNames: [string, string, string]
-      distances: [string, string, string]
-    }
   }
 
   whatIs: {

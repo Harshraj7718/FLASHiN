@@ -2,6 +2,7 @@ import SectionHeader from '@/components/SectionHeader'
 import FeatureCard from '@/components/FeatureCard'
 import RevealStagger from '@/components/RevealStagger'
 import Reveal from '@/components/Reveal'
+import RevealImage from '@/components/RevealImage'
 import Button from '@/components/Button'
 import { getSupplierBenefits } from '@/data/benefits'
 import { useLanguage } from '@/i18n'
@@ -26,14 +27,14 @@ export default function SupplierSection({ compact = false }: SupplierSectionProp
         </div>
 
         {!compact && (
-          <Reveal className="mb-12 overflow-hidden rounded-card">
+          <RevealImage variant="slide-right" className="mb-12 overflow-hidden rounded-card">
             <img
               src="/images/suppliers.png"
               alt="FLASHiT connecting local suppliers with customers, professionals and delivery riders"
               loading="lazy"
               className="w-full object-cover"
             />
-          </Reveal>
+          </RevealImage>
         )}
 
         <Reveal className={`rounded-card border border-brand-red/25 bg-white/[0.04] p-6 sm:p-8 ${compact ? 'mb-8' : 'mb-12'}`} delay={0.1}>

@@ -1,5 +1,6 @@
 import ScrollTypeReveal from '@/components/ScrollTypeReveal'
 import Reveal from '@/components/Reveal'
+import RevealImage from '@/components/RevealImage'
 import { useLanguage } from '@/i18n'
 
 export default function LocalBusinessPhilosophy() {
@@ -38,14 +39,14 @@ export default function LocalBusinessPhilosophy() {
           <span className="rounded-full bg-brand-red px-6 py-3">{t.philosophy.result}</span>
         </div>
 
-        <Reveal delay={0.15} className="overflow-hidden rounded-card border border-white/10">
+        <RevealImage variant="tilt" delay={0.1} className="overflow-hidden rounded-card border border-white/10">
           <img
             src="/images/philosophy.png"
             alt="We're not replacing local businesses — we're making them accessible, through FLASHiT"
             loading="lazy"
             className="w-full object-cover"
           />
-        </Reveal>
+        </RevealImage>
       </div>
     </section>
   )
